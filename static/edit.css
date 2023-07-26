@@ -1,0 +1,89 @@
+.room{
+
+    display: inline-block;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 5px 50px 5px 10px;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 12pt;
+    text-align: left;
+    margin-bottom:5px ;
+}
+body{
+    margin: 0;
+    background-color: #8FBC8F;
+}
+.container{
+    font-family: 'Helvetica-bold', 'Arial-bold', sans-serif;
+
+    padding: 7px;
+    width: fit-content;
+    display: block;
+    margin: auto auto;
+    margin-top: 5vh;
+    background-color: #f6f6f6;
+    border:3px solid #ccc
+}
+.input{
+  display:block;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 5px 50px 5px 10px;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-size: 12pt;
+  text-align: left;
+  margin-bottom:5px ;
+}
+.submit{
+    display:block;
+    font-family: 'Helvetica-bold', 'Arial-bold', sans-serif;
+    font-size: large;
+    margin-top: 5px;
+    background-color: #3582c4;
+    color: white;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+.confirmation{
+  background-color: #04AA6D;
+  text-align: center;
+  border-radius: 5px;
+}
+  
+  li a {
+    box-sizing: border-box;
+    height: 100%;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Helvetica-bold', 'Arial-bold', sans-serif;
+
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    background-color: #111;
+
+  }
+
+.active:hover{
+  background-color: #036340;
+ 
+}
+
+  .active {
+    background-color: #04AA6D;
+  }
