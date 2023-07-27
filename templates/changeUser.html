@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <link rel="stylesheet" href="../static/edit.css">
+    <link rel="stylesheet" href="../static/dropdown.css">
+    <link rel="icon" type="image/x-icon" href="./static/favicon.ico">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Problems</title>
+</head>
+<body>
+    <ul>
+        <li><a  href="/edit">Edit Dashboard</a></li>
+        <li><a href="/announce">Announce</a></li>
+        <li><a class="active" href="/users">Edit Users</a></li>
+        <li><a href="/video">Display Video</a></li>
+
+        <li style="margin-left: auto;"><a href="/logout">logout</a></li>
+    </ul>
+    <div class="container">
+        <h1>Change Password</h1>
+    <form method="post">
+        <label for="user">User:</label><br>
+        <input id="user" name="user" class="input">
+        <label for="password">Password (empty to remove) :</label>
+        <input type="text" name="password" class="input">
+        <input class="submit" type="submit" value="Change / Remove">
+    </form>
+    </div>
+    
+</body>
+</html>

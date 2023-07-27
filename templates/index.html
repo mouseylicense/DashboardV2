@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="icon" type="image/x-icon" href="./static/favicon.ico">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+  <header>
+    <h1 id="message"></h1>
+
+  </header>
+<div id="video_cont" class="video_div">
+  <video  id="video" onended="document.getElementById('video_cont').style.display = 'none';">
+    video couldnt be found or not supported
+    <source id="src" type="video/mp4">
+  </video>
+  
+</div>
+<div id="container">
+  <h1 id="loading">loading data...</h1>
+</div>
+<script src="./static/scripts/message.js"></script>
+<script src="./static/scripts/video.js"></script>
+<script src="./static/scripts/probloems.js"></script>
+<footer>
+  <button class="login" onclick="window.location.href = '/login';">Log in</button>
+</footer>
+</body>
+</html>
+
+

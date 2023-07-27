@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../static/edit.css">
+    <link rel="icon" type="image/x-icon" href="./static/favicon.ico">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>שנה את ההתראה</title>
+</head>
+<body>
+    <ul>
+        <li><a  href="/edit">Edit Dashboard</a></li>
+        <li><a class="active" href="/announce">Announce</a></li>
+        <li><a href="/users">Edit Users</a></li>
+        <li><a href="/video">Display Video</a></li>
+
+        <li style="margin-left: auto;"><a href="/logout">logout</a></li>
+    </ul>
+    <div id="container" class="container">
+        <h1>Header Edit</h1>
+        {% if message%}
+        <div class="confirmation"><p>message set : {{message}}</p></div>
+        {%- endif %}
+        <form method="post">
+        <label for="message">Message:</label>
+        <div class="test">
+        <input class="text_input" type="text" name="message">
+        <input name="color" class="color" type="color">
+    </div>
+        <br>
+        <input type="submit" class="submit" value="Change">
+    </form>
+    </div>
+</body>
+</html>

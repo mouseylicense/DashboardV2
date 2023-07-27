@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/edit.css">
+    <title>Login</title>
+    <link rel="icon" type="image/x-icon" href="./static/favicon.ico">
+
+</head>
+<body>    
+    <div class="container">
+    <h1 >Login</h1>
+    {% if error %}
+    <p>{{ error }}</p>
+    {% endif %}
+
+    <form method="POST" action="{{ url_for('login') }}">
+        <input class="room" placeholder="Username" type="text" id="username" name="username" required><br>
+        <input placeholder="Password" type="Password" id="password" name="password" class="room" required><br>
+        <button class="submit" type="submit">Login</button>
+        
+    </form>
+    </div>
+</body>
+</html>

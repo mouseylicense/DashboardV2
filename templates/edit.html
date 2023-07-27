@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <link rel="stylesheet" href="../static/edit.css">
+    <link rel="stylesheet" href="../static/dropdown.css">
+    <link rel="icon" type="image/x-icon" href="./static/favicon.ico">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Problems</title>
+</head>
+<body>
+    <ul>
+        <li><a class="active" href="/edit">Edit Dashboard</a></li>
+        <li><a href="/announce">Announce</a></li>
+        <li><a href="/users">Edit Users</a></li>
+        <li><a href="/video">Display Video</a></li>
+
+        <li style="margin-left: auto;"><a href="/logout">logout</a></li>
+    </ul>
+    <div class="container">
+        <h1>Remove Problems</h1>
+    <form method="post">
+        <label for="room">Room:</label><br>
+        <select id="room" name="room" class="room">
+            {% for x in rooms.keys()%}
+                {% if rooms[x]["problems"] -%}
+                    <option value="{{x}}">✖ | {{x}}</option>
+                {% else -%}
+                    <option value="{{x}}">✔ | {{x}}</option>
+                {% endif %}
+            {%endfor%}
+        </select>
+        <div id="list1" class="dropdown-check-list" tabindex="100">
+        <span id="span" class="anchor">Select Problems</span>
+        <ul class="items" id="multiselect">
+        </ul></div>
+        <input class="submit" type="submit" value="Remove">
+    </form>
+    </div>
+    <script>
+
+        var fu = {{ rooms|safe }};
+        var e = document.getElementById("room");
+        function onChange() {
+            document.getElementById("multiselect").innerHTML = ""
+            console.log("test")
+          var value = e.value;
+            console.log(value)
+            var problemsList = fu[value]["problems"]
+            if (problemsList.length ==0 ){
+                console.log("hello")
+                document.getElementById("list1").style.display = "none"
+            } else {
+                document.getElementById("list1").style.display = "block"
+            }
+            for (let i = 0;i<problemsList.length;i++){
+                console.log(problemsList[i])
+                document.getElementById("multiselect").innerHTML += `
+                <li><input name="problem" type="checkbox" value="${problemsList[i]}">${problemsList[i]}</li>`
+            }
+        }
+        e.onchange = onChange;
+        onChange()
+    </script>
+    <script>var checkList = document.getElementById('list1');
+        checkList.getElementsByClassName('anchor')[0].onclick = function(evt) {
+          if (checkList.classList.contains('visible'))
+            checkList.classList.remove('visible');
+          else
+            checkList.classList.add('visible');
+        }</script>
+</body>
+</html>
